@@ -1,0 +1,136 @@
+:root{font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC",sans-serif;color:#542707;font-weight:700}*{box-sizing:border-box}body{margin:0;background:#302419;min-height:100vh;display:flex;justify-content:center;align-items:center;overflow:hidden}button,input{font:inherit;color:inherit}button{cursor:pointer;touch-action:manipulation;user-select:none;-webkit-tap-highlight-color:transparent}button:disabled{cursor:default}button:focus-visible,input:focus-visible{outline:5px solid #6c5fc2;outline-offset:3px}button:not(.money-tile):not(.zoom-tile):not(.currency-choice):active{filter:brightness(.95);transform:translateY(2px)}button{border:3px solid #d9a06b;border-radius:40px;background:linear-gradient(#fff9e9,#ffe7bc);box-shadow:inset 0 0 0 3px #fff8e6,0 3px 2px #ad73442b;padding:10px 25px;font-size:30px}.primary{background:linear-gradient(#ff8892,#ff5666);border-color:#cd3446;color:#fff;box-shadow:inset 0 0 0 3px #ffbac2,0 4px 2px #b2404e33}.chosen{background:linear-gradient(#e0eab2,#c8d584);border-color:#88a634}.sprite{display:inline-block;background-repeat:no-repeat;flex-shrink:0;vertical-align:middle}.product{width:100%;height:100%}.coin{height:100%;max-width:100%}.note{width:100%;max-height:100%}#viewport{position:relative;flex-shrink:0}#stage{width:1672px;height:941px;position:absolute;left:0;top:0;transform-origin:0 0;overflow:hidden;background:#ffe4c0 url(room.png) center/100% 100%}.home .welcome{position:absolute;top:0;left:520px;width:630px;text-align:center;font-size:70px;letter-spacing:10px;margin:0;padding:0 15px;border-radius:80px;background:#ffd1c2a8;text-shadow:2px 2px #fff}.welcome-sub{position:absolute;top:91px;left:570px;width:530px;text-align:center;font-size:34px;margin:0;border-radius:50px;background:#e2e4acaa}.home-teacher{position:absolute;right:30px;top:16px}.home-full{position:absolute;left:25px;top:20px}.store-cards{position:absolute;left:145px;right:145px;top:155px;height:465px;display:flex;gap:30px}.store-card{position:relative;width:50%;height:100%;background:none;border:0;padding:0;box-shadow:none;border-radius:60px}.store-card>.sprite{width:100%;height:100%}.store-card.chosen{outline:5px solid #92b843;outline-offset:-8px}.selected-check{position:absolute;right:20px;top:5px;display:grid;place-items:center;border:4px solid #fff;background:#87b227;border-radius:50%;width:62px;height:62px;color:#fff;font-size:43px;box-shadow:0 0 0 2px #92b843}.role-title{position:absolute;top:626px;left:710px;width:250px;text-align:center;font-size:34px;margin:0;background:#ffedc9;border:2px solid #d9ae75;border-radius:40px}.roles{position:absolute;top:687px;left:515px;display:flex;gap:20px}.roles button{width:310px;height:90px;font-size:42px}.home-start{position:absolute;top:803px;left:585px;width:500px;height:108px;font-size:57px;letter-spacing:7px}.home-students{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:4}.home-notice{position:absolute;top:435px;left:420px;width:850px;padding:25px;background:#fff7e9;border:4px solid #d38f58;border-radius:30px;z-index:8;font-size:30px;text-align:center}.header{position:absolute;inset:0 0 auto;height:80px;z-index:10;background:#ffdfb4d9;display:flex;align-items:center;justify-content:center;border-bottom:3px solid #e9ba87}.header h1{font-size:49px;letter-spacing:4px;margin:0;text-shadow:2px 2px #fff;max-width:900px}.level-badge{position:absolute;left:45px;top:14px;font-size:29px;padding:4px 22px;background:#e4e7b5;border:3px solid #b6bd70;border-radius:40px}.header-buttons{position:absolute;right:20px;top:12px;display:flex;gap:8px}.header-buttons button{font-size:24px;padding:5px 15px}.header-buttons button:last-child{font-size:27px}.task{position:absolute;top:82px;left:15px;right:15px;height:65px;background:#fff7e8ed;z-index:10;text-align:center;display:grid;place-items:center;border-radius:45px;font-size:40px;border:2px solid #ffeccc}.game.cashier{background-image:url(cashier.png)}.game.customer{background-image:url(customer.png)}.shelf-products{position:absolute;left:70px;top:175px;width:390px;height:181px;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);z-index:4}.shelf-cell{position:relative;display:flex;align-items:center;justify-content:center;padding:0 20px 25px}.shelf-price{position:absolute;bottom:0;left:3px;right:3px;background:#fff0ce;border:1px solid #c4985e;border-radius:7px;text-align:center;font-size:19px;white-space:nowrap;padding:1px 0}.queue{position:absolute;left:475px;top:140px;width:540px;height:260px;overflow:hidden;z-index:2;pointer-events:none}.animal-position{position:absolute}.animal-position .animal{width:100%;height:100%}.animal-position.a0{left:295px;top:-5px;width:215px;height:300px}.animal-position.a1{left:140px;top:26px;width:185px;height:230px}.animal-position.a2{left:10px;top:6px;width:165px;height:180px}.counter-mask{position:absolute;left:0;right:0;top:400px;height:245px;background:url(cashier.png) 0 -400px/1672px 941px;z-index:3;pointer-events:none;clip-path:polygon(4% 0,100% 0,100% 100%,0 100%,0 25%)}.shopping-list{position:absolute;left:1419px;top:238px;width:220px;height:200px;padding:8px 3px;z-index:5}.shopping-list h2{font-size:31px;text-align:center;margin:0 0 8px;background:#dce3a9;border-radius:15px}.list-row{display:flex;align-items:center;gap:5px;font-size:24px;min-height:55px}.list-row .product{width:61px;height:52px}.counter-goods{position:absolute;left:145px;top:400px;width:400px;height:115px;display:flex;justify-content:center;gap:12px;z-index:5}.counter-goods .product{width:130px;height:110px}.register-label{position:absolute;left:1220px;top:302px;width:170px;text-align:center;z-index:5;font-size:38px}.tray{position:absolute;z-index:5;background:linear-gradient(#e4ebbd,#d3df9d);border:7px ridge #e1e5ac;border-radius:26px;box-shadow:0 4px 3px #9d77313b;padding:14px 35px 5px}.incoming-tray{left:580px;top:393px;width:510px;height:132px}.selected-tray{left:205px;top:547px;width:765px;height:87px}.tray-title{position:absolute;top:-24px;left:50%;transform:translateX(-50%);border:2px solid #cf9c61;background:#fff0cb;border-radius:20px;font-size:26px;padding:2px 22px;white-space:nowrap}.selected-tray .tray-title{left:-95px;top:0;transform:none;font-size:27px}.tray-items{height:100%;display:flex;align-items:center;justify-content:center;gap:13px}.money-tile{padding:0;border:0;border-radius:0;background:none;box-shadow:none;display:flex;align-items:center;justify-content:center;height:100%;max-width:165px;min-width:35px;flex:1}.money-tile:has(.coin){max-width:100px}.money-tile .coin{height:100%;width:auto}.money-tile .note{width:100%;height:auto}.tray-empty{color:#7c8050;font-size:25px;font-weight:400}.zoom-button{position:absolute;right:-8px;top:-20px;border-radius:50%;padding:0;width:48px;height:48px;font-size:42px;line-height:1;z-index:2}.more-money{padding:3px 10px;font-size:20px;flex-shrink:0}.game-actions{position:absolute;right:25px;top:548px;height:65px;display:flex;gap:12px;z-index:6}.game-actions button{font-size:30px;padding:4px 24px}.main-picker{position:absolute;left:16px;right:16px;top:644px;height:248px;background:repeating-linear-gradient(4deg,#f4c491,#f6c99c 7px,#f4c491 12px);border:7px ridge #efbe86;border-radius:15px;z-index:6}.picker{display:flex;flex-direction:column;height:100%;width:100%;gap:3px;padding:4px}.currency-row{display:flex;flex:1;min-height:0}.currency-choice{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;min-width:0;padding:2px 10px 27px;border:0;border-right:5px ridge #e6b77f;border-radius:3px;box-shadow:none;background:#ffebbc1c}.currency-choice:last-child{border-right:0}.currency-choice .note{width:90%;height:80%;max-width:215px}.currency-choice .coin{height:95%;width:auto;max-width:130px}.currency-choice:disabled{filter:grayscale(.8);opacity:.35}.currency-choice:not(:disabled):hover{background:#fff8c46b}.value-label{position:absolute;bottom:0;background:#fff0d1;border:1px solid #bc945b;border-radius:23px;padding:0 14px;font-size:25px;line-height:29px}.stock{position:absolute;right:6px;top:0;border-radius:15px;background:#fff2cc;padding:1px 7px;font-size:18px}.unavailable{position:absolute;top:8px;font-size:20px;background:#fff5dc;padding:2px 10px;border-radius:15px}.bottom-help{position:absolute;top:899px;left:0;right:0;text-align:center;font-size:27px;z-index:8}.customer .shelf-products{left:70px;top:205px;width:520px;height:300px}.customer .shelf-cell{padding:0 28px 33px}.customer .shelf-price{font-size:24px}.customer .shopping-list{left:1210px;top:190px;width:375px;height:330px;background:#fff6e4;border:3px solid #d9ab77;border-radius:30px;padding:18px}.customer .shopping-list h2{font-size:37px;margin-bottom:20px}.customer .list-row{font-size:31px;min-height:75px}.customer .list-row .product{width:90px;height:75px}.customer .counter-goods{left:780px;top:370px;width:400px;height:90px}.customer .counter-goods .product{width:105px;height:90px}.cashier-girl{position:absolute;left:943px;top:180px;width:240px;height:244px;overflow:hidden;z-index:2}.cashier-girl .girl{width:100%;height:100%;aspect-ratio:auto!important}.customer .selected-tray{left:215px;top:548px;width:1020px}.customer .game-actions{right:35px;top:565px}.speech{position:absolute;left:530px;top:185px;width:560px;z-index:15;border:4px solid #b5ac70;border-radius:40px;background:#fff9e9;box-shadow:0 5px 10px #623e2426;padding:15px 22px;font-size:27px}.speech strong{font-size:22px;color:#807e48}.speech p{margin:5px 0}.speech.correct{border-color:#9ab34c;background:#fbffea}.modal-backdrop{position:absolute;inset:0;background:#42291369;z-index:30;display:grid;place-items:center}.zoom-panel{position:relative;width:1630px;height:909px;border:10px ridge #e0b17b;border-radius:45px;background:#fff3dc url(room.png) center/cover;padding:12px 35px;box-shadow:0 10px 25px #422b2555;display:flex;flex-direction:column;align-items:stretch}.zoom-panel h2{text-align:center;font-size:43px;margin:0 0 5px}.zoom-instruction{text-align:center;font-size:24px;margin:0 0 8px;background:#f4f0be;border-radius:22px}.zoom-tray{height:363px;flex-shrink:0;background:#dfebba;border:7px ridge #d2db9c;border-radius:32px;padding:8px 25px;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);gap:4px 40px;align-items:center;justify-items:center}.zoom-tile{border:0;padding:0;background:transparent;box-shadow:none;display:flex;align-items:center;justify-content:center;width:100%;height:100%;min-height:0}.zoom-tile .note{height:95%;width:auto;max-width:100%}.zoom-tile .coin{height:90%;width:auto;max-width:100%}.empty-state{grid-column:1/-1;grid-row:1/-1;text-align:center;font-size:30px;color:#7f8953}.picker-title{font-size:26px;text-align:center;margin:4px 0 0}.zoom-panel>.picker{height:257px;flex-shrink:0;background:repeating-linear-gradient(4deg,#f4c491,#f6c99c 7px,#f4c491 12px);border:6px ridge #e4b17d;border-radius:18px}.zoom-panel .one-row{height:257px}.zoom-actions{display:flex;justify-content:center;gap:65px;margin-top:auto;padding-top:7px}.zoom-actions button{font-size:31px;min-width:285px}.pagination{height:38px;display:flex;align-items:center;justify-content:center;gap:30px;font-size:24px;flex-shrink:0}.pagination button{font-size:22px;padding:0 25px}.zoom-panel .pagination+.picker-title{margin-top:0}.zoom-panel:has(.pagination) .zoom-tray{height:329px}.in-zoom{top:160px;left:450px;width:700px}.readonly .zoom-tray{height:650px;grid-template-rows:repeat(3,1fr)}.readonly .readonly-back{margin:15px auto 0;min-width:350px}.teacher{padding:10px 35px}.teacher>h1{font-size:54px;text-align:center;letter-spacing:8px;margin:0 0 25px;text-shadow:2px 2px #fff}.teacher-back{position:absolute;right:35px;top:17px}.teacher-tabs{display:flex;gap:20px;height:64px}.teacher-tabs button{flex:1;font-size:35px}.teacher-body{height:680px;padding:12px 30px;background:#fff3dfeb;border:3px solid #e1b182;border-radius:32px;margin-top:12px;overflow:auto}.store-tabs{display:flex;justify-content:center;gap:20px}.store-tabs button{font-size:29px;padding:5px 50px}.setting-note{font-size:22px;margin:7px 0;font-weight:500}.teacher-body>.setting-note{text-align:center}.products-settings{display:flex;gap:35px;height:540px}.products-settings table{border-collapse:collapse;width:1000px;font-size:27px;table-layout:fixed}.products-settings th{background:#d9dfa5;font-size:28px}.products-settings td,.products-settings th{border:1px solid #d9b88f;padding:2px 14px}.products-settings th:first-child{width:38%}.products-settings th:nth-child(2){width:12%}.products-settings th:nth-child(3){width:31%}.product-name{display:flex;align-items:center;gap:30px;height:49px}.product-name .product{width:75px;height:48px}.products-settings input[type=number]{width:100%;font-size:30px;text-align:center;border:2px solid #c7a077;background:#fffaf0;border-radius:15px}.products-settings input[type=checkbox]{appearance:none;width:90px;height:38px;background:#c2beb6;border:2px solid #a39987;border-radius:30px;cursor:pointer;position:relative;vertical-align:middle}.products-settings input[type=checkbox]::before{content:'';position:absolute;left:4px;top:2px;width:28px;height:28px;background:#fffbe9;border-radius:50%;box-shadow:0 1px 2px #444}.products-settings input[type=checkbox]:checked{background:#9abb43}.products-settings input[type=checkbox]:checked::before{left:52px}.rules{flex:1;background:#fff6e7;border:2px solid #e5bc88;border-radius:25px;padding:5px 25px;font-size:26px}.rules h2{text-align:center;font-size:37px;background:#dfe6b0;border-radius:25px;margin:10px 0}.rules p{margin:16px 0}.rules h3{font-size:30px;margin:15px 0 0}.rules hr{border:0;border-top:2px solid #d5be8c}.teacher-footer{position:absolute;bottom:14px;left:40px;right:40px;display:flex;gap:25px}.teacher-footer button{width:300px;font-size:33px}.teacher-footer .primary{margin-left:auto;width:480px}.teacher-notice{position:absolute;bottom:90px;left:350px;right:350px;background:#fff4cd;border:3px solid #bb9159;border-radius:20px;text-align:center;padding:9px;font-size:25px;z-index:12}.options-grid{display:grid;grid-template-columns:460px 1fr;gap:35px}.options-grid h2{font-size:29px;margin:15px 0 8px}.choices{display:flex;flex-wrap:wrap;gap:12px 20px;font-size:26px}.choices label{display:flex;align-items:center;gap:8px;padding:4px 10px;background:#fff7e5;border:2px solid #d9b58a;border-radius:20px}.choices input{width:23px;height:23px;accent-color:#8da935}.denomination-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:9px}.denomination-setting{display:flex;flex-direction:column;align-items:center;gap:5px;padding:8px 3px;background:#ffebd0;border:2px solid #d8b384;border-radius:17px;font-size:19px;min-width:0}.denomination-setting .sprite{width:80px;height:70px;aspect-ratio:auto!important}.denomination-setting .note{height:45px;margin:12px 0 13px}.denomination-setting input[type=checkbox]{width:25px;height:25px;accent-color:#89a33c}.denomination-setting input[type=number]{width:85px;font-size:24px;border:2px solid #ba976f;border-radius:10px;background:#fff8e7;text-align:center}.uniform-settings{text-align:center;font-size:30px}.uniform-settings h2{margin:0 0 20px}.uniform-settings .choices{justify-content:center}.uniform-preview{display:flex;justify-content:center;gap:160px;height:340px}.uniform-preview .sprite{width:250px;height:340px}.teacher-body:has(.uniform-settings){overflow:hidden}
+/* Keep approved image sheets intact; frame each sprite through a clipped image. */
+.sprite{position:relative;overflow:hidden}
+#stage.home,#stage.teacher{background-image:url(room.png)}
+#stage.game.cashier{background-image:url(cashier.png)}
+#stage.game.customer{background-image:url(customer.png)}
+.currency-choice .coin{width:90px;height:90px;max-height:95%}
+.one-row .currency-choice .coin{width:160px;height:160px;max-height:95%}
+.money-tile .coin{width:65px;height:65px;flex-shrink:0}
+.incoming-tray .money-tile .coin{width:90px;height:90px}
+.zoom-tile .coin{width:90px;height:90px}
+.readonly .zoom-tile .coin{width:150px;height:150px}
+.zoom-tile .note{width:225px;height:100px}
+.readonly .zoom-tile .note{width:310px;height:138px}
+.currency-choice .note{width:185px;height:83px}
+.zoom-panel .currency-choice .note{width:185px;height:83px}
+.currency-choice .coin{max-width:none}
+.art-button{border:0!important;border-radius:0!important;box-shadow:none!important;background:none!important;padding:0!important}
+.art-button>.sprite{width:100%;height:100%}
+.home .welcome{top:0;left:510px;width:650px;height:100px;padding:0;background:none}
+.home .welcome>.sprite{width:100%;height:100%}
+.home .welcome-sub{top:94px;left:565px;width:540px;height:55px;background:none}
+.home .welcome-sub>.sprite{width:100%;height:100%}
+.home-teacher.art-button{width:295px;height:78px;top:8px;right:18px}
+.home-start.art-button{left:540px;top:790px;width:590px;height:132px}
+.roles .art-button{width:310px;height:93px;border-radius:42px!important}
+.roles .chosen{outline:5px solid #8ca732;outline-offset:-9px}
+.cashier-girl{left:920px;top:175px;width:280px;height:250px}
+.animal-position.a0{left:265px;top:-10px;width:300px;height:300px}
+.animal-position.a1{left:125px;top:25px;width:230px;height:230px}
+.animal-position.a2{left:0;top:5px;width:205px;height:205px}
+.customer .speech{left:610px;top:195px;width:340px;font-size:25px}
+.cashier .speech{left:1000px;top:177px;width:370px;font-size:25px}
+.zoom-panel .speech{left:450px;top:165px;width:700px;font-size:27px}
+.customer-animal{position:absolute;left:560px;top:320px;width:250px;height:250px;z-index:4;pointer-events:none}
+.customer-animal .animal{width:100%;height:100%}
+.customer-animal{top:290px}
+/* v0.2: selection marks use drawn paths, not font glyphs. */
+.store-card.chosen,.roles .chosen{outline:none}
+.store-card{isolation:isolate}
+.selection-outline{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.selected-check{display:block;width:66px;height:66px;right:12px;top:2px;border:0;border-radius:0;padding:0;background:none;box-shadow:none;z-index:3}
+.selected-check img{display:block;width:100%;height:100%;pointer-events:none}
+.roles .art-button{position:relative}
+.roles .art-button.chosen::after{content:'';position:absolute;inset:7px 4px;border:3px solid #86a638;border-radius:999px;pointer-events:none}
+.roles .selected-check{width:42px;height:42px;right:-3px;top:-6px;z-index:3}
+/* An uninterrupted solid rim avoids broken ridge corners when the stage scales. */
+.tray{border:4px solid #b4bc7d;box-shadow:inset 0 0 0 4px #fff5d3,inset 0 0 0 7px #c0ca8e,0 3px 3px #9d77313b;border-radius:28px;padding:15px 35px 7px}
+.selected-tray .tray-title{left:-190px;top:14px;width:165px;text-align:center;padding:3px 8px}
+.incoming-tray .tray-title{top:-39px}
+.zoom-button{display:grid;place-items:center;width:52px;height:52px;right:10px;top:-22px;padding:0;border:3px solid #d5aa70;border-radius:50%;line-height:normal;box-shadow:inset 0 0 0 2px #fff9e9,0 2px 3px #92653730}
+.zoom-button img{display:block;width:31px;height:31px;pointer-events:none}
+.zoom-button:active{transform:none!important}
+/* Place animal feet and their contact shadows on one floor baseline. */
+.customer-animal,.animal-position{display:flex;align-items:flex-end;justify-content:center;isolation:isolate}
+.customer-animal .animal,.animal-position .animal{height:100%;width:auto;max-width:100%;flex-shrink:0}
+.customer-animal::before,.animal-position::before{content:'';position:absolute;left:24%;right:24%;bottom:3px;height:10px;border-radius:50%;background:#8a603336;filter:blur(3px);z-index:-1}
+.customer-animal{left:560px;top:340px;width:250px;height:250px}
+.customer .selected-tray{top:608px;height:82px}
+.customer .game-actions{top:618px}
+.customer .main-picker{top:700px;height:192px}
+.customer .main-picker .two-rows .currency-choice .note{width:140px;height:62px}
+.customer .main-picker .two-rows .currency-choice .coin{width:65px;height:65px}
+.customer .main-picker .one-row .currency-choice .coin{width:130px;height:130px}
+.animal-position.a0{left:265px;top:-10px;width:280px;height:300px}
+.animal-position.a1{left:125px;top:auto;bottom:15px;width:220px;height:215px}
+.animal-position.a2{left:0;top:auto;bottom:75px;width:205px;height:175px}
+/* Cashier artwork already contains complete hand-painted tray rims. */
+.cashier .tray{background:transparent;border-color:transparent;box-shadow:none}
+.cashier .incoming-tray{left:566px;top:395px;width:530px;height:132px}
+.cashier .selected-tray{left:197px;top:542px;width:780px;height:92px}
+/* Let the cashier choose money directly from the seven painted wooden compartments. */
+.cashier .main-picker{left:71px;right:83px;top:654px;height:205px;background:transparent;border:0;border-radius:0;box-shadow:none}
+.cashier .main-picker .picker{padding:0;gap:0}
+.cashier .main-picker .currency-row{width:100%;gap:0}
+.cashier .main-picker .currency-choice,.cashier .main-picker .drawer-empty-slot{flex:0 0 calc(100% / 7);width:calc(100% / 7);border:0;border-radius:0;background:transparent;box-shadow:none}
+.cashier .main-picker .currency-choice{padding:0 8px 28px}
+.cashier .main-picker .currency-choice:not(:disabled):hover{background:#fff8c444;border-radius:18px}
+.cashier .main-picker .currency-choice .coin{width:130px;height:130px;max-height:95%}
+.cashier .main-picker .currency-choice .note{width:175px;height:80px;max-width:100%}
+.cashier .main-picker .value-label{font-size:23px;line-height:27px}
+.cashier .drawer-tabs{position:absolute;top:642px;left:690px;z-index:8;display:flex;gap:10px}
+.cashier .drawer-tabs button{font-size:23px;line-height:30px;padding:2px 23px;border-width:2px;box-shadow:0 2px 3px #7b512333}
+.cashier .drawer-tabs button.active{background:linear-gradient(#e4edbc,#cbdc91);border-color:#88a544}
+.cashier:has(.drawer-tabs) .main-picker{top:688px;height:172px}
+/* Seat the student against the front edge of the illustrated counter. */
+.customer .cashier-girl{top:203px}
+/* Incoming payment is counted on the counter itself, without another view. */
+.cashier .incoming-tray{padding:12px 27px 10px}
+.cashier .incoming-tray .paid-items{display:flex;flex-wrap:wrap;align-content:center;align-items:center;gap:4px 8px;overflow:hidden}
+.cashier .incoming-tray .paid-items .money-tile{flex:0 1 auto;max-width:none;min-width:0;height:92px}
+.cashier .incoming-tray .paid-items .note{width:105px;height:49px}
+.cashier .incoming-tray .paid-items .coin{width:70px;height:70px}
+.cashier .incoming-tray .paid-items.many .money-tile{height:48px}
+.cashier .incoming-tray .paid-items.many .note{width:78px;height:36px}
+.cashier .incoming-tray .paid-items.many .coin{width:42px;height:42px}
+.cashier .incoming-tray .paid-items.grouped .money-tile{position:relative;height:78px}
+.cashier .incoming-tray .paid-items.grouped .note{width:105px;height:49px}
+.cashier .incoming-tray .paid-items.grouped .coin{width:68px;height:68px}
+.cashier .incoming-tray .money-count{position:absolute;right:-5px;bottom:1px;min-width:30px;padding:1px 5px;border-radius:15px;background:#fff9e8;border:2px solid #bc9762;font-size:18px;line-height:20px}
+/* The painted drawer compartments supply the frame; only currency sits inside. */
+.cashier .main-picker .currency-choice{padding:0 8px}
+/* The front customer meets the painted tray rim; paws and feet stay behind it. */
+.cashier .animal-position.rabbit.a0{top:15px}
+.cashier .counter-mask{top:395px;height:250px;background-position:0 -395px}
+/* Both previews use their own whole student illustration, without adjacent faces. */
+.uniform-preview{height:290px;gap:95px;align-items:flex-start}
+.uniform-card{width:300px;margin:0;display:flex;flex-direction:column;align-items:center;gap:3px;font-size:25px}
+.uniform-card .sprite{width:240px;height:240px;aspect-ratio:1!important}
+.uniform-card figcaption{line-height:35px}
+/* Sprite sheets contain different amounts of transparent padding around items. */
+.shelf-cell .product{transform:translate(var(--shelf-x),var(--shelf-y))}
+/* The cashier painting has shallower compartments than the customer painting.
+   Keep both price strips on the wooden shelf fronts and the items inside them. */
+.cashier .shelf-cell .product{width:85px;height:85px;transform:translate(var(--shelf-x),calc(var(--shelf-y) + 5px))}
+.cashier .shelf-price{font-size:18px;line-height:20px;padding:0 1px;bottom:10px}
+.cashier .shelf-cell:nth-child(n+4){top:-23px}
+.cashier .shelf-cell:nth-child(n+4) .shelf-price{bottom:0}
+
+/* Keep cashier order lines within the illustrated clipboard. */
+.cashier .shopping-list{left:1421px;top:240px;width:225px;height:213px;padding:6px 8px 3px;display:flex;flex-direction:column}
+.cashier .shopping-list h2{flex:none;font-size:29px;line-height:38px;margin:0 0 2px}
+.cashier .shopping-rows{flex:1;min-height:0;display:flex;flex-direction:column;justify-content:center;gap:3px}
+.cashier .list-row{flex:none;height:48px;min-height:0;gap:5px;font-size:22px;white-space:nowrap;overflow:hidden}
+.cashier .list-row .product{width:53px;height:46px}
+.cashier .list-row span:last-child{min-width:0;white-space:nowrap}
+
+/* The inner sheet spans x=1418..1647 in the cashier background. */
+.cashier .shopping-list{left:1418px;width:225px}
+.header-buttons .home-button{width:73px;height:60px;padding:4px;display:grid;place-items:center}
+.header-buttons .home-button img{display:block;width:51px;height:51px}
+
+/* Pull the title pill clear of the rounded clipboard frame. */
+.cashier .shopping-list h2{width:197px;margin-left:15px}
+.header-buttons .home-button{width:62px;height:62px;border-radius:50%;padding:0;display:grid;place-items:center}
+.header-buttons .home-button img{width:42px;height:42px;margin:auto}
