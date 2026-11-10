@@ -146,3 +146,6 @@
 .products-settings .rules h3{font-size:27px;line-height:1.25;margin:10px 0 4px}
 .products-settings .rules p{margin:9px 0}
 .products-settings .rules hr{margin:10px 0}
+
+/* Reserve a clear strip above the fixed teacher action buttons. */
+.teacher-body{height:635px;padding-bottom:28px}
