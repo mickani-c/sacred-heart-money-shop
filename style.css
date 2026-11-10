@@ -134,3 +134,8 @@
 .cashier .shopping-list h2{width:197px;margin-left:15px}
 .header-buttons .home-button{width:62px;height:62px;border-radius:50%;padding:0;display:grid;place-items:center}
 .header-buttons .home-button img{width:42px;height:42px;margin:auto}
+
+/* Safari-safe full-screen fallback notice. */
+.fullscreen-help{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:100;width:780px;padding:34px 45px;background:#fff8e9;border:5px solid #c99a62;border-radius:36px;box-shadow:0 12px 35px #4e2b1d66;text-align:center;font-size:31px;line-height:1.55}
+.fullscreen-help p{margin:0 0 24px}
+.fullscreen-help button{font-size:29px;min-width:210px}
