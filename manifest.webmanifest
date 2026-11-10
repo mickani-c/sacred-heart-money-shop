@@ -1,0 +1,10 @@
+{
+  "name": "聖心貨幣小商店",
+  "short_name": "貨幣小商店",
+  "lang": "zh-Hant",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "background_color": "#f7d4aa",
+  "theme_color": "#f7d4aa"
+}
