@@ -5,7 +5,7 @@ const LABELS=['1角','2角','5角','1元','2元','5元','10元','10元','20元',
 const NAMES=[['糖果','餅乾','果汁','清水','筆記簿','鉛筆','橡皮擦','直尺','白膠漿','紙巾'],['書包','籃球','電風扇','吸塵機','平板電腦','耳機','手錶','運動鞋','相機','保溫水樽']];
 const UNITS=[['包','包','盒','瓶','本','枝','塊','把','樽','包'],['個','個','部','部','部','副','隻','對','部','個']];
 const PRICES=[[22,40,50,30,60,20,15,35,45,25],[2680,1280,3980,12800,24800,1995,3680,4590,16800,1295]];
-function defaults(){return {version:1,uniform:'auto',stores:[0,1].map((s)=>({products:PRICES[s].map((price,i)=>({price,on:i<6})),minimum:false,denominationMode:'manual',allowed:VALUES.map((_,i)=>s===1||i<7),walletMode:'unlimited',stocks:VALUES.map((_,i)=>i<7?10:5)}))};}
+function defaults(){return {version:1,uniform:'auto',stores:[0,1].map((s)=>({products:PRICES[s].map((price,i)=>({price,on:i<6})),purchaseCounts:s?[1,2,3]:[1,2],allowRepeatedProduct:true,minimum:false,denominationMode:'manual',allowed:VALUES.map((_,i)=>s===1||i<7),walletMode:'unlimited',stocks:VALUES.map((_,i)=>i<7?10:5)}))};}
 const copy=x=>JSON.parse(JSON.stringify(x));
 function validate(input){
  if(!input||input.version!==1||!['auto','summer','winter'].includes(input.uniform)||!Array.isArray(input.stores)||input.stores.length!==2)throw Error('設定檔格式不正確。');
@@ -14,6 +14,16 @@ function validate(input){
   if(!s||!Array.isArray(s.products)||s.products.length!==10)throw Error('貨品設定不完整。');
   d.products=s.products.map(p=>{if(!p||!Number.isInteger(p.price)||p.price<1||p.price>99999||typeof p.on!=='boolean')throw Error('貨品價錢須為0.10至9999.90元。');return {price:p.price,on:p.on};});
   let count=d.products.filter(p=>p.on).length;if(count<1||count>6)throw Error('每間店舖須選擇1至6款貨品上架。');
+  const maxItems=l?3:2,rawCounts=s.purchaseCounts===undefined?d.purchaseCounts:s.purchaseCounts;
+  if(!Array.isArray(rawCounts)||!rawCounts.length||rawCounts.some(n=>!Number.isInteger(n)||n<1||n>maxItems))throw Error('請至少選擇一個有效的購買物品數量。');
+  d.purchaseCounts=[...new Set(rawCounts)].sort((a,b)=>a-b);
+  if(s.allowRepeatedProduct!==undefined&&typeof s.allowRepeatedProduct!=='boolean')throw Error('相同貨品設定不正確。');
+  d.allowRepeatedProduct=s.allowRepeatedProduct===undefined?true:s.allowRepeatedProduct;
+  if(!d.allowRepeatedProduct&&Math.max(...d.purchaseCounts)>count)throw Error('不包括相同物品時，上架貨品數量須不少於所選購買件數。');
+  if(l===0&&!d.allowRepeatedProduct&&d.purchaseCounts.includes(2)){
+   const prices=d.products.filter(p=>p.on).map(p=>p.price);
+   if(!prices.some((p,i)=>prices.indexOf(p)!==i))throw Error('Lv.1 不包括相同物品的雙件題，須至少有兩款同價貨品上架。');
+  }
   if(!['manual','random'].includes(s.denominationMode)||!['unlimited','manual','random'].includes(s.walletMode)||typeof s.minimum!=='boolean')throw Error('遊戲條件不正確。');
   d.minimum=s.minimum;d.denominationMode=s.denominationMode;d.walletMode=s.walletMode;
   if(!Array.isArray(s.allowed)||s.allowed.length!==13||s.allowed.some(x=>typeof x!=='boolean'))throw Error('可用貨幣設定不完整。');
@@ -57,9 +67,10 @@ function generate(config,level,role,previousSignature='',rng=Math.random){
  let maxStock=s.walletMode==='manual'?s.stocks.reduce((n,c,i)=>n+(all[i]&&s.allowed[i]?c*VALUES[i]:0),0):Infinity;
  let fallback=null;
  for(let attempt=0;attempt<180;attempt++){
+  const n=s.purchaseCounts[rand(s.purchaseCounts.length,rng)];
   const first=goods[rand(goods.length,rng)];let cart=[first.i];
-  if(level===0&&rng()<.5){const same=goods.filter(p=>p.price===first.price);let second=same[rand(same.length,rng)];if(digitSafe([first.price,second.price]))cart.push(second.i);}
-  if(level===1){let n=1+rand(3,rng);while(cart.length<n)cart.push(goods[rand(goods.length,rng)].i);}
+  if(level===0&&n===2){const same=goods.filter(p=>p.price===first.price&&(s.allowRepeatedProduct||p.i!==first.i));if(!same.length)continue;let second=same[rand(same.length,rng)];if(!digitSafe([first.price,second.price]))continue;cart.push(second.i);}
+  if(level===1){const choices=s.allowRepeatedProduct?goods:shuffle(goods.filter(p=>p.i!==first.i),rng);while(cart.length<n){if(!choices.length)break;const next=s.allowRepeatedProduct?choices[rand(choices.length,rng)]:choices.pop();cart.push(next.i);}if(cart.length!==n)continue;}
   let prices=cart.map(i=>s.products[i].price),total=prices.reduce((a,b)=>a+b,0);
   let allowed=s.denominationMode==='manual'?s.allowed.slice():all.map(v=>v&&rng()<.63);
   if(!allowed.some(Boolean))allowed[rand(level?13:7,rng)]=true;
