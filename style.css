@@ -139,3 +139,10 @@
 .fullscreen-help{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:100;width:780px;padding:34px 45px;background:#fff8e9;border:5px solid #c99a62;border-radius:36px;box-shadow:0 12px 35px #4e2b1d66;text-align:center;font-size:31px;line-height:1.55}
 .fullscreen-help p{margin:0 0 24px}
 .fullscreen-help button{font-size:29px;min-width:210px}
+
+/* Keep every fixed-rule note inside its panel after adding quantity settings. */
+.products-settings .rules{min-height:0;overflow:hidden;font-size:23px;line-height:1.3;padding:5px 24px 8px}
+.products-settings .rules h2{font-size:34px;line-height:1.2;margin:8px 0 9px}
+.products-settings .rules h3{font-size:27px;line-height:1.25;margin:10px 0 4px}
+.products-settings .rules p{margin:9px 0}
+.products-settings .rules hr{margin:10px 0}
