@@ -21,7 +21,24 @@ function currency(i){if(i>=7){let j=i-7,row=Math.floor(j/2),ys=[16,365,690],hs=[
 function girl(){return crop('cashier-girls',1774,887,season()==='summer'?0:887,0,887,887,'girl');}
 function resize(){const scale=Math.min(innerWidth/1672,innerHeight/941);stage.style.transform=`scale(${scale})`;document.getElementById('viewport').style.width=1672*scale+'px';document.getElementById('viewport').style.height=941*scale+'px';}
 addEventListener('resize',resize);resize();
-function full(){if(document.fullscreenElement)document.exitFullscreen?.();else document.documentElement.requestFullscreen?.();}
+function fullscreenHelp(){
+ document.querySelector('.fullscreen-help')?.remove();
+ const ios=/iPad|iPhone|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+ const message=ios?'Safari 未能切換全螢幕。請按「分享」→「加至主畫面」，再由主畫面開啟遊戲。':'瀏覽器未能切換全螢幕，請使用瀏覽器選單的全螢幕功能。';
+ const box=el('section',{class:'fullscreen-help',role:'alert','aria-live':'assertive'},el('p',{},message));
+ box.append(button('知道了',()=>box.remove(),'primary'));
+ stage.append(box);
+}
+async function full(){
+ const root=document.documentElement;
+ const active=document.fullscreenElement||document.webkitFullscreenElement;
+ const enter=root.requestFullscreen||root.webkitRequestFullscreen;
+ const exit=document.exitFullscreen||document.webkitExitFullscreen;
+ try{
+  if(active){if(!exit)return fullscreenHelp();await Promise.resolve(exit.call(document));}
+  else{if(!enter)return fullscreenHelp();await Promise.resolve(enter.call(root));}
+ }catch{fullscreenHelp();}
+}
 function openTeacher(){S.returnPage=S.page;draft=E.copy(config);S.teacherLevel=S.level;S.notice='';S.page='teacher';render();}
 function start(){S.turn=0;S.selected=[];S.zoom=null;S.feedback=null;next();}
 function next(){let previous=S.q?.signature||'';let q=E.generate(config,S.level,S.role,previous);if(q.error){S.notice=q.error;S.page='home';render();return;}q.settings=E.copy(config.stores[S.level]);S.q=q;S.drawerTab=S.level&&q.allowed.slice(7).some(Boolean)?'notes':'coins';S.turn++;S.selected=[];S.zoom=null;S.feedback=null;S.page='game';render();}
